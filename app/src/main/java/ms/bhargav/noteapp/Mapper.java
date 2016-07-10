@@ -28,4 +28,13 @@ public class Mapper {
         }
         return viewModels;
     }
+
+    public static List<NoteRealmModel> mapReverse(List<NoteViewModel> viewModels) {
+        List<NoteRealmModel> models = new ArrayList<>(viewModels.size());
+        for (NoteViewModel viewModel : viewModels) {
+            models.add(map(viewModel));
+        }
+        return models;
+    }
+
 }

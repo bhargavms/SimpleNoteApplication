@@ -6,4 +6,8 @@
     <string name="title_add_new_note">Add new note</string>
     <string name="add_title">Add Title</string>
     <string name="add_body_of_note">Add Body of note</string>
+    <string name="menu_grid">Grid</string>
+    <string name="menu_list">List</string>
+    <string name="message_items_removed">Note removed</string>
+    <string name="undo">UNDO</string>
 </resources>

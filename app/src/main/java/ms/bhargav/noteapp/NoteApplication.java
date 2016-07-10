@@ -9,18 +9,20 @@ import io.realm.RealmConfiguration;
  * Created by Bhargav on 7/7/2016.
  */
 public class NoteApplication extends Application {
-    private NotePresenter presenter;
+    private NotePresenter notePresenter;
     private Realm realm;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        presenter = new NotePresenter();
         initRealm();
     }
 
-    public NotePresenter getPresenter() {
-        return presenter;
+    public NotePresenter getNotePresenter() {
+        if (notePresenter == null) {
+            notePresenter = new NotePresenter();
+        }
+        return notePresenter;
     }
 
     private void initRealm() {
@@ -29,5 +31,9 @@ public class NoteApplication extends Application {
 
     public Realm getRealm() {
         return this.realm;
+    }
+
+    public void releaseNotePresenter() {
+        this.notePresenter = null;
     }
 }
